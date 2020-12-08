@@ -1,12 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 'use strict';
-// 1) Сделать класс DomElement, который
-//    содержит свойства
-//   - selector, 
-//   - height,
-//   - width, 
-//   - bg, 
-//   - fontSize
+
     const DomElement = function () {
         this.selector = ''; 
         this.height = '';
@@ -37,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const block = new DomElement();
     block.selector = '.app-div';
-    block.width = '100px';
+    block.width = '300px';
     block.height = '100px';
     block.bg = 'orange';
     block.fontSize = '24px';
@@ -45,6 +39,4 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(block);
 
     appDiv.textContent = `Hello I am New Division`;
-
-
 });
