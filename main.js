@@ -1,12 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 'use strict';
-// 1) Сделать класс DomElement, который
-//    содержит свойства
-//   - selector, 
-//   - height,
-//   - width, 
-//   - bg, 
-//   - fontSize
+
     const DomElement = function () {
         this.selector = ''; 
         this.height = '';
@@ -39,12 +33,37 @@ document.addEventListener('DOMContentLoaded', () => {
     block.selector = '.app-div';
     block.width = '100px';
     block.height = '100px';
-    block.bg = 'orange';
+    block.bg = '#ffffff';
     block.fontSize = '24px';
     const appDiv = block.createElem();
-    console.log(block);
+    document.body.style.background = '#6fa25c';
+    appDiv.style.position = 'absolute';
+    appDiv.style.borderRadius = '5px';
+    appDiv.style.transition = '.5s all';
 
-    appDiv.textContent = `Hello I am New Division`;
+    let left = 0;
+    let top = 0;
 
+    document.addEventListener('keydown', event => {       
+        
+        if(event.key === "ArrowRight") {
+            left = left + 10;
+            appDiv.style.left = left + 'px';
+        }
 
+        if(event.key === "ArrowLeft") {
+            left = left - 10;
+            appDiv.style.left = left + 'px';            
+        }
+
+        if(event.key === "ArrowDown") {
+            top = top + 10;
+            appDiv.style.top = top + 'px';
+        }
+
+        if (event.key === "ArrowUp") {
+            top = top - 10;
+            appDiv.style.top = top +'px';
+        }
+    });
 });
